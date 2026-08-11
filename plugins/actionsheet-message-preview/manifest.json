@@ -1,9 +1,9 @@
 {
 	"format": 1,
-	"id": "com.example.library",
-	"name": "Example Library",
-	"description": "A plugin other plugins can depend on. See Example Dependent.",
-	"author": "Your Name",
+	"id": "mudrhiod.actionsheetmessagepreview",
+	"name": "ActionSheetMessagePreview",
+	"description": "Preview messages within it's own action sheet.",
+	"author": "Mudrhiod",
 	"version": "1.0.0",
 	"dependencies": {
 		"revenge.api": {
