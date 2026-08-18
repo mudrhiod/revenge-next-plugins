@@ -75,7 +75,7 @@ jobs:
 
       - name: Generate repository index
         run: |
-          bunx revenge-plugin generate-index --build/dist build/dist --base-url "https://revenge-next.mudrhiod.me" --out build/dist/index.json
+          bunx revenge-plugin generate-index --dist build/dist --base-url "https://revenge-next.mudrhiod.me" --out build/dist/index.json
 
       - name: Verify dist artifacts
         run: |
