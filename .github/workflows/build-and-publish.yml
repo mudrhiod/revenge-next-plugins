@@ -75,11 +75,11 @@ jobs:
 
       - name: Generate repository index
         run: |
-          bunx revenge-plugin generate-index --dist dist --base-url "https://revenge-next.mudrhiod.me" --out dist/index.json
+          bunx revenge-plugin generate-index --dist dist --base-url "https://revenge-next.mudrhiod.me" --out build/dist/index.json
 
       - name: Verify dist artifacts
         run: |
-          ls -la dist/
+          ls -la build/dist/
           echo "Artifacts ready for publishing"
 
       - name: Deploy to gh-pages branch
