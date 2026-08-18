@@ -1,0 +1,30 @@
+{
+  "format": 1,
+  "name": "My Plugin Repository",
+  "description": "Example plugin repository from the Revenge plugin template.",
+  "plugins": {
+    "mudrhiod.actionsheetmessagepreview": {
+      "name": "ActionSheetMessagePreview",
+      "description": "Preview messages within it's own action sheet.",
+      "author": "Mudrhiod",
+      "channels": {
+        "latest": "1.0.0"
+      },
+      "versions": {
+        "1.0.0": {
+          "url": "https://revenge-next.mudrhiod.me/mudrhiod.actionsheetmessagepreview.zip",
+          "sha256": "1dd6ccd920586307d9986374dd9a9e951b5ab48404a8891f262ada84900ec15a",
+          "size": 556,
+          "dependencies": {
+            "revenge.api": {
+              "version": ">=1 <2"
+            },
+            "discord": {
+              "version": "*"
+            }
+          }
+        }
+      }
+    }
+  }
+}
