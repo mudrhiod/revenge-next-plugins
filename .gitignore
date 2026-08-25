@@ -8,7 +8,6 @@ local.properties
 # JS
 node_modules/
 bun.lockb
-bun.lock
 package-lock.json
 deno.lock
 

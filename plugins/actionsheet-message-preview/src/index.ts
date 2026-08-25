@@ -1,8 +1,15 @@
+import patchActionSheet from './lib/patchActionSheet'
+
+let cleanup: (() => void) | null = null;
+
 export default plugin({
 	start() {
-		console.log('[js-plugin] started')
+		patchActionSheet()
 	},
 	stop() {
-		console.log('[js-plugin] stopped')
+		if (cleanup) {
+			cleanup()
+			cleanup = null
+		}
 	},
 })
