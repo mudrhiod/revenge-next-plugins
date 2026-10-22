@@ -42,9 +42,9 @@ jobs:
       - name: Check out the published pool
         run: .github/scripts/checkout-pool.sh
 
-      - name: Plan releases
-        id: plan
-        run: .github/scripts/plan-releases.sh
+#      - name: Plan releases
+#        id: plan
+#        run: .github/scripts/plan-releases.sh
 
       - name: Build plugins
         if: steps.plan.outputs.count != '0'
