@@ -1,25 +1,77 @@
 {
   "format": 1,
-  "name": "Mudrhiod's Plugin Repository",
-  "description": "Example plugin repository from the Revenge plugin template.",
+  "name": "Mudrhiod's Plugin Forest",
+  "description": "Mudrhiods's plugins for Revenge.",
   "plugins": {
+    "com.example.themes": {
+      "name": "Example Themes",
+      "description": "Example themes for Revenge.",
+      "author": "Your Name",
+      "channels": {
+        "latest": "1.0.0"
+      },
+      "versions": {
+        "1.0.0": {
+          "url": "https://mudrhiod.github.io/revenge-next-plugins/pool/com.example.themes@1.0.0.zip",
+          "sha256": "ae3bc4a228b110449aa17d102092cfa648132d80382b191a74eba83514b14ca4",
+          "size": 848,
+          "dependencies": {
+            "revenge.api": {
+              "version": ">=1.2.1 <2"
+            },
+            "discord": {
+              "version": "*"
+            },
+            "revenge.api.themes": {
+              "version": "*"
+            }
+          }
+        }
+      }
+    },
     "mudrhiod.actionsheetmessagepreview": {
       "name": "ActionSheetMessagePreview",
       "description": "Preview messages within it's own action sheet.",
-      "author": "Mudrhiod",
+      "author": "Mudrhiod <807170846497570848>",
       "channels": {
         "latest": "1.0.3"
       },
       "versions": {
         "1.0.3": {
-          "url": "https://revenge-next.mudrhiod.me/mudrhiod.actionsheetmessagepreview.zip",
-          "sha256": "dfd5cdb0569de39acce05530c62419534685c4c8d35bc8f3cd709074cf6f8fc7",
-          "size": 1859,
+          "url": "https://mudrhiod.github.io/revenge-next-plugins/pool/mudrhiod.actionsheetmessagepreview@1.0.3.zip",
+          "sha256": "5d7d4c1931542449064ab417df39a516cbf31c44fc360149509e12553202daba",
+          "size": 1922,
           "dependencies": {
             "revenge.api": {
               "version": ">=1 <2"
             },
             "discord": {
+              "version": "*"
+            }
+          }
+        }
+      }
+    },
+    "mudrhiod.themes.solar": {
+      "name": "Solar",
+      "description": "Replaces Discord's icons with ones from the Solar iconset.",
+      "author": "Mudrhiod <807170846497570848>",
+      "channels": {
+        "latest": "1.1.0"
+      },
+      "versions": {
+        "1.1.0": {
+          "url": "https://mudrhiod.github.io/revenge-next-plugins/pool/mudrhiod.themes.solar@1.1.0.zip",
+          "sha256": "b850a88fc6070fb0450e9b4ec1c346aa8c425eb1533f61c9a5046da6e0eb6055",
+          "size": 10044297,
+          "dependencies": {
+            "revenge.api": {
+              "version": ">=1.2.1 <2"
+            },
+            "discord": {
+              "version": "*"
+            },
+            "revenge.api.themes": {
               "version": "*"
             }
           }
