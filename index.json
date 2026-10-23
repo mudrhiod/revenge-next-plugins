@@ -52,6 +52,32 @@
         }
       }
     },
+    "mudrhiod.solar": {
+      "name": "Solar",
+      "description": "Replaces Discord's icons with ones from the Solar iconset.",
+      "author": "Mudrhiod <807170846497570848>",
+      "channels": {
+        "latest": "1.1.0"
+      },
+      "versions": {
+        "1.1.0": {
+          "url": "https://mudrhiod.github.io/revenge-next-plugins/pool/mudrhiod.solar@1.1.0.zip",
+          "sha256": "99f240bb912f6b0e58ee54f0c647db6cd818dbba5e820ffb3d24edc2bfd38a5b",
+          "size": 10044296,
+          "dependencies": {
+            "revenge.api": {
+              "version": ">=1.2.1 <2"
+            },
+            "discord": {
+              "version": "*"
+            },
+            "revenge.api.themes": {
+              "version": "*"
+            }
+          }
+        }
+      }
+    },
     "mudrhiod.themes.solar": {
       "name": "Solar",
       "description": "Replaces Discord's icons with ones from the Solar iconset.",
