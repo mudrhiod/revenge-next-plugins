@@ -57,7 +57,7 @@
       "description": "Replaces Discord's icons with ones from the Solar iconset.",
       "author": "Mudrhiod <807170846497570848>",
       "channels": {
-        "latest": "1.1.0"
+        "latest": "1.1.1"
       },
       "versions": {
         "1.1.0": {
@@ -67,6 +67,22 @@
           "dependencies": {
             "revenge.api": {
               "version": ">=1.2.1 <2"
+            },
+            "discord": {
+              "version": "*"
+            },
+            "revenge.api.themes": {
+              "version": "*"
+            }
+          }
+        },
+        "1.1.1": {
+          "url": "https://mudrhiod.github.io/revenge-next-plugins/pool/mudrhiod.solar@1.1.1.zip",
+          "sha256": "9c3c72423ec51a7002663f1e679f24ec24040197dc3fb3ac32c2b0809bd79df2",
+          "size": 10065068,
+          "dependencies": {
+            "revenge.api": {
+              "version": ">=1 <2"
             },
             "discord": {
               "version": "*"
