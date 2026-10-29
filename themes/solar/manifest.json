@@ -6,15 +6,9 @@
 	"author": "Mudrhiod <807170846497570848>",
 	"version": "1.1.1",
 	"dependencies": {
-		"revenge.api": {
-			"version": ">=1 <2"
-		},
-		"discord": {
-			"version": "*"
-		},
-		"revenge.api.themes": {
-			"version": "*"
-		}
+		"valenced.api": { "version": ">=1 <2" }, 
+		"discord": { "version": "*" },
+		"valenced.api.themes": { "version": "*" }
 	},
 	"dist": {
 		"script": "index.js"

@@ -1,8 +1,8 @@
-import { Design } from '@revenge-mod/discord/design';
+import { Design } from '@valenced/discord/design';
 import { Image, View, type ImageSourcePropType } from 'react-native';
-import { proxify } from '@revenge-mod/utils/proxy';
-import { Tokens } from '@revenge-mod/discord/common/tokens';
-import { AssetId } from '@revenge-mod/assets/types';
+import { proxify } from '@valenced/utils/proxy';
+import { Tokens } from '@valenced/discord/common/tokens';
+import { AssetId } from '@valenced/assets/types';
 
 import ExpandableCard from "./ExpandableCard";
 import Chip from "./Chip";

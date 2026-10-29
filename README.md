@@ -1,13 +1,13 @@
-# Revenge Plugin Template
+# Valenced Plugin Template
 
-This repository is a starter monorepo for external Revenge plugins. Each plugin becomes one ZIP
+This repository is a starter monorepo for external Valenced plugins. Each plugin becomes one ZIP
 file. One repository can hold any number of plugins under `plugins/`, and theme plugins under `themes/`.
 
 A plugin has up to three parts. Its own `manifest.json` declares all of them:
 
 - **`dist.android`** is native Kotlin code. The build compiles it to a DEXed JAR, and the plugin loader loads it with `DexClassLoader`.
   This code runs early, before the JS bundle.
-- **`dist.script`** is the JavaScript bundle. The Revenge JS side runs it.
+- **`dist.script`** is the JavaScript bundle. The Valenced JS side runs it.
 
 ## Layout
 
@@ -53,17 +53,17 @@ or hidden types, don't leak into other plugins. A plugin without a `tsconfig.jso
 - **JDK 25 or later** and the **Android SDK**, with `build-tools` and `platform 36`.
   Don't forget to set `sdk.dir` in `local.properties`, or set the `ANDROID_HOME` environment variable.
 - **[Bun](https://bun.com/)** or **[Node.js](https://nodejs.org/)**.
-- **The Revenge plugin API in your local Maven repository.** Run this in the `revenge-xposed` repository:
+- **The Valenced plugin API in your local Maven repository.** Run this in the [`Valenced/valenced`](https://github.com/Valenced/valenced) repository:
 
   ```sh
-  ./gradlew :api:publishToMavenLocal
+  ./gradlew :core:publishToMavenLocal :android:api:publishToMavenLocal
   ```
 
-  The task publishes `io.github.revenge:api`. `gradle/libs.versions.toml` pins the version.
+  The tasks publish `app.valenced:core` and `app.valenced:api`. `gradle/libs.versions.toml` pins the version.
 
 ### Fetching packages from GitHub Packages
 
-Revenge API is published to GitHub Packages. To fetch packages from GitHub Packages, you'll need to set up a **personal access token** with `read:packages`.
+Valenced API is published to GitHub Packages. To fetch packages from GitHub Packages, you'll need to set up a **personal access token** with `read:packages`.
 
 This template requires you to put the token in your local Gradle properties file (`~/.gradle/gradle.properties`):
 
@@ -99,11 +99,11 @@ Gradle derives each package task name from the folder name, example: `plugins/ex
 
 ## Themes
 
-A theme plugin is a normal plugin that lives under `themes/`. It depends on `revenge.api.themes` and
+A theme plugin is a normal plugin that lives under `themes/`. It depends on `valenced.api.themes` and
 registers its themes in `preInit`:
 
 ```ts
-/// <reference types="@revenge-mod/themes-api" />
+/// <reference types="@valenced/themes-api" />
 
 export default plugin({
   preInit({ themes }) {
@@ -135,7 +135,7 @@ packages `assets/` into the ZIP.
   "contributors": ["Someone Else <669627189624307712> (mailto:support@discord.com)", "Some Other Person"],  // optional, same format
   "version": "1.0.0",               // the version of this plugin. Required.
   "dependencies": {                 // keyed by plugin id
-    "revenge.api": { "version": ">=1" },
+    "valenced.api": { "version": ">=1" },
     "discord": { "version": "*" }
   },
   "dist": {
@@ -160,12 +160,12 @@ Name <DISCORD_ID_1> <DISCORD_ID_N> (LINK_1) (LINK_N "Optional label")
 - Links must start with `https://`, `http://` or `mailto:`.
 - A plain `Your Name` is still valid.
 
-Revenge shows the author as a button that opens a sheet with everyone's profiles and links. Revenge only shows at most 5 IDs and 5 links per each person.
-Supplying contact information is optional. If the string does not follow the format, Revenge shows it as plain text.
+Valenced shows the author as a button that opens a sheet with everyone's profiles and links. Valenced only shows at most 5 IDs and 5 links per each person.
+Supplying contact information is optional. If the string does not follow the format, Valenced shows it as plain text.
 
 ### `version`
 
-Revenge uses its own version scheme. A version is one or more integer segments.
+Valenced uses its own version scheme. A version is one or more integer segments.
 One lowercase alphanumeric prerelease label can follow. `1.0.0`, `2026.7` and `1.2.0-beta2` are all valid.
 
 Two rules control the order:
@@ -232,7 +232,7 @@ start({ themes }) {
 
 Two dependency IDs are reserved.
 
-- **`revenge.api`** resolves to the Revenge release version, which is the plugin API version.
+- **`valenced.api`** resolves to the Valenced release version, which is the plugin API version.
   This dependency is **mandatory**. Constrain it to the API versions you tested, for example `">=1 <2"`.
 - **`discord`** resolves to the Discord app version, for example `>=355.0`.
 
@@ -248,8 +248,8 @@ way.
 
 package com.example.plugin
 
-import io.github.revenge.plugins.plugin
-import io.github.revenge.xposed.api.registerMethod
+import app.valenced.plugins.plugin
+import app.valenced.xposed.api.registerMethod
 
 val myPlugin = plugin {
     start {
@@ -268,7 +268,7 @@ The `@file:JvmName("MyPlugin")` annotation renames that facade. `dist.android.cl
 If you omit the annotation, point `dist.android.class` at `...MyPluginKt`.
 Declare exactly one `plugin {}` val in the file that the manifest names.
 
-The host provides the Revenge API, the Xposed API, coroutines and the Kotlin standard library. The
+The host provides the Valenced API, the Xposed API, coroutines and the Kotlin standard library. The
 build marks them `compileOnly`. The host class loader supplies them at runtime, so the JAR must not
 contain them.
 
@@ -281,7 +281,7 @@ contain them.
 This template is also a **plugin repository**. A repository is a static host that serves `index.json`
 describing every published plugin channels, versions, absolute artifact URLs, and SHA-256 digests.
 
-A user can add the repository URL in Revenge. Browsing, dependency resolution and updates all run on the client.
+A user can add the repository URL in Valenced. Browsing, dependency resolution and updates all run on the client.
 
 ### Channels
 
@@ -354,7 +354,7 @@ Git tags and GitHub Releases are written for changelogs only. Nothing reads them
 
 > [!IMPORTANT]  
 > You'll need to setup a **personal access token** with `read:packages` and put it in **Repository Settings > Secrets and variables > Actions** as `READ_PACKAGES_TOKEN`.  
-> The workflows use it to download the Revenge API dependency. You may encounter a `401` error during build if you don't set it up.
+> The workflows use it to download the Valenced API dependency. You may encounter a `401` error during build if you don't set it up.
 
 Two workflows publish the repository. The CLI holds the release logic, and it never talks to a Git
 host. Both workflows call it with local files. To port the repository to another host, you rewrite

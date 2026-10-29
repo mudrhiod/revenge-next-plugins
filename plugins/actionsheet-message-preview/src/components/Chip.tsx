@@ -1,6 +1,6 @@
-import { Design } from "@revenge-mod/discord/design";
-import { Tokens } from "@revenge-mod/discord/common/tokens";
-import { proxify } from "@revenge-mod/utils/proxy";
+import { Design } from "@valenced/discord/design";
+import { Tokens } from "@valenced/discord/common/tokens";
+import { proxify } from "@valenced/utils/proxy";
 import { View, Text } from "react-native";
 
 const { createStyles } = Design;

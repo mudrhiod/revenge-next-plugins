@@ -5,10 +5,10 @@
  * Paths are relative to the plugin's directory. Gradle packs `assets/` into the ZIP.
  */
 
-/// <reference types="@revenge-mod/themes-api" />
+/// <reference types="@valenced/themes-api" />
 
-import { Tokens } from '@revenge-mod/discord/common/tokens'
-import type { ThemeColors } from '@revenge-mod/themes-api/types'
+import { Tokens } from '@valenced/discord/common/tokens'
+import type { ThemeColors } from '@valenced/themes-api/types'
 
 export default plugin({
 	preInit({ themes }) {

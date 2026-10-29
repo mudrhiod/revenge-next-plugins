@@ -1,6 +1,6 @@
-import { ActionSheetActionCreators } from "@revenge-mod/discord/actions";
-import { before, after } from "@revenge-mod/patcher";
-import { findInReactFiber } from "@revenge-mod/utils/react";
+import { ActionSheetActionCreators } from "@valenced/discord/actions";
+import { before, after } from "@valenced/patcher";
+import { findInReactFiber } from "@valenced/utils/react";
 import { createElement } from "react";
 
 import MessageCard from "../components/MessageCard";
