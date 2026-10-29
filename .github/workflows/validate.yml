@@ -42,7 +42,7 @@ jobs:
         run: |
           bun run generate-index \
             --dist build/dist \
-            --base-url https://revenge.local \
+            --base-url https://valenced.local \
             --out /tmp/index.json
           cat /tmp/index.json
 

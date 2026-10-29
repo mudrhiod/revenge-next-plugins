@@ -4,7 +4,7 @@
 	"name": "ActionSheetMessagePreview",
 	"description": "Preview messages within it's own action sheet.",
 	"author": "Mudrhiod <807170846497570848>",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"dependencies": {
 		"valenced.api": { "version": ">=1 <2" },
 		"discord": { "version": "*" }
