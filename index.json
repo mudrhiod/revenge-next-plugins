@@ -1,0 +1,82 @@
+{
+  "format": 1,
+  "name": "Mudrhiod's Plugin Forest",
+  "description": "Mudrhiods's plugins for Valenced.",
+  "plugins": {
+    "com.example.themes": {
+      "name": "Example Themes",
+      "description": "Example themes for Revenge.",
+      "author": "Your Name",
+      "channels": {
+        "latest": "1.0.1"
+      },
+      "versions": {
+        "1.0.1": {
+          "url": "https://mudrhiod.github.io/revenge-next-plugins/pool/com.example.themes@1.0.1.zip",
+          "sha256": "bdb35067bda261fa51c90ebf51c3c37ade6a04abb7b884416c77d5e6b3935623",
+          "size": 846,
+          "dependencies": {
+            "valenced.api": {
+              "version": ">=1 <2"
+            },
+            "discord": {
+              "version": "*"
+            },
+            "valenced.api.themes": {
+              "version": "*"
+            }
+          }
+        }
+      }
+    },
+    "mudrhiod.actionsheetmessagepreview": {
+      "name": "ActionSheetMessagePreview",
+      "description": "Preview messages within it's own action sheet.",
+      "author": "Mudrhiod <807170846497570848>",
+      "channels": {
+        "latest": "1.0.4"
+      },
+      "versions": {
+        "1.0.4": {
+          "url": "https://mudrhiod.github.io/revenge-next-plugins/pool/mudrhiod.actionsheetmessagepreview@1.0.4.zip",
+          "sha256": "03991d05162beace5e721e5b678b94a87390e869e46566ea67d9145fb0606c96",
+          "size": 1922,
+          "dependencies": {
+            "valenced.api": {
+              "version": ">=1 <2"
+            },
+            "discord": {
+              "version": "*"
+            }
+          }
+        }
+      }
+    },
+    "mudrhiod.solar": {
+      "name": "Solar",
+      "description": "Replaces Discord's icons with ones from the Solar iconset.",
+      "author": "Mudrhiod <807170846497570848>",
+      "channels": {
+        "latest": "1.1.2"
+      },
+      "versions": {
+        "1.1.2": {
+          "url": "https://mudrhiod.github.io/revenge-next-plugins/pool/mudrhiod.solar@1.1.2.zip",
+          "sha256": "2e228373eca542c853832ce15dac3f2b4a7e223cfad9a4631681b13c3b112582",
+          "size": 10065067,
+          "dependencies": {
+            "valenced.api": {
+              "version": ">=1 <2"
+            },
+            "discord": {
+              "version": "*"
+            },
+            "valenced.api.themes": {
+              "version": "*"
+            }
+          }
+        }
+      }
+    }
+  }
+}
