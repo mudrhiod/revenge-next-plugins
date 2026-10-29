@@ -1,4 +1,4 @@
-/// <reference types="@revenge-mod/themes-api" />
+/// <reference types="@valenced/themes-api" />
 
 export default plugin({
 	preInit({ themes }) {

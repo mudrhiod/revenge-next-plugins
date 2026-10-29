@@ -14,9 +14,9 @@ dependencyResolutionManagement {
         mavenCentral()
         // Xposed API (provided by the framework at runtime).
         maven(url = "https://api.xposed.info/")
-        // The Revenge plugin API is published to GitHub Packages.
+        // The Valenced plugin API is published to GitHub Packages.
         maven {
-            url = uri("https://maven.pkg.github.com/revenge-mod/revenge-xposed")
+            url = uri("https://maven.pkg.github.com/Valenced/valenced")
             credentials(PasswordCredentials::class) {
                 username = providers.gradleProperty("GitHubPackagesUsername").orNull
                     ?: System.getenv("GITHUB_ACTOR")
@@ -27,7 +27,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "revenge-plugin-template"
+rootProject.name = "valenced-plugin-template"
 
 val pluginRoots = listOf("plugins", "themes")
 
