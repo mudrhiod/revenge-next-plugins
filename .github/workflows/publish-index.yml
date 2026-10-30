@@ -38,6 +38,3 @@ jobs:
 
       - name: Regenerate and publish index.json
         run: .github/scripts/regenerate-index.sh
-
-      - name: Update the README plugin table
-        run: .github/scripts/update-readme.sh
