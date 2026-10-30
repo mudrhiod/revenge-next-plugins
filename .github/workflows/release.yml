@@ -61,6 +61,3 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: .github/scripts/tag-releases.sh
-
-      - name: Update the README plugin table
-        run: .github/scripts/update-readme.sh
