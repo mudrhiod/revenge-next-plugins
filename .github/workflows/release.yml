@@ -37,7 +37,7 @@ jobs:
           distribution: temurin
           java-version: 25
 
-      - run: bun install
+      - run: bun install --frozen-lockfile
 
       - name: Check out the published pool
         run: .github/scripts/checkout-pool.sh
@@ -50,7 +50,7 @@ jobs:
         if: steps.plan.outputs.count != '0'
         run: ./gradlew --no-daemon packageAllPlugins
         env:
-          GITHUB_TOKEN: ${{ secrets.READ_PACKAGES_TOKEN }} # For Gradle to download the API dependency.
+          GITHUB_TOKEN: ${{ secrets.READ_PACKAGES_TOKEN }} # For Gradle to download the API & core dependency.
 
       - name: Publish to the pool
         if: steps.plan.outputs.count != '0'
@@ -61,3 +61,6 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: .github/scripts/tag-releases.sh
+
+      - name: Update the README plugin table
+        run: .github/scripts/update-readme.sh
